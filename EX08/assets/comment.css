@@ -1,0 +1,291 @@
+/* CSS Document for Pizza Shop */
+
+/*Terence Budu-Biney
+ 11/15/2018
+ ISTE240 Exercise 8 */
+
+ @charset "utf-8";
+
+ /*
+ ====================
+  css reset
+ ====================
+ */
+ 
+ *,
+ *::after,
+ *::before {
+     margin: 0;
+     padding: 0;
+     box-sizing: inherit;
+ }
+
+
+ /*
+=============================
+basic styles & root font size
+=============================
+*/
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	box-sizing: border-box;
+	
+}
+
+body {
+	font-family: "Lato", sans-serif;
+	font-weight: 400;
+	line-height: 1.7;
+	color: #777;
+}
+
+
+.header {
+    text-align: center;
+    background-color: #08cfff;
+    padding: 6rem;
+}
+
+.heading {
+    font-size: 3.2rem;
+    font-weight: 400;
+    color: #fff;
+    text-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+}
+
+@media only screen and (max-width: 56.25em) {
+    .heading {
+      font-size: 3rem; } }
+  @media only screen and (max-width: 37.5em) {
+    .heading{
+      font-size: 2.5rem; } }
+
+/*
+=============================
+utilities
+=============================
+*/
+
+.u-margin-bottom-medium {
+    margin-bottom: 4rem !important; }
+    @media only screen and (max-width: 56.25em) {
+      .u-margin-bottom-medium {
+        margin-bottom: 3rem !important; } }
+
+
+ /*
+=============================
+ grid layout
+=============================
+*/
+
+.row {
+	max-width: 114rem;
+	margin: 0 auto;
+}
+
+.row:not(:last-child){
+	margin-bottom: 4rem;
+}
+
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.row [class^="col-"]{
+	float: left;
+}
+
+.row [class^="col-"]:not(:last-child){
+	margin-right: 6rem;
+}
+
+
+/*--- responsive grid layout ------ */
+
+@media only screen and (max-width: 56.25em){
+	.row [class^="col-"]:not(:last-child){
+		margin-right: 0;
+		margin-bottom: 6rem;
+	}
+}
+
+@media only screen and (max-width: 56.25em){
+	.row [class^="col-"] {
+		width: 100% !important;
+	}
+}
+
+.row .col-3-of-4 {
+	width: calc(2 * ((100% - 3 * 6rem) / 4) + 6rem);
+}
+
+/*
+=============================
+ buttons
+=============================
+*/
+
+.btn--green {
+    background-color: #55c57a;
+	color: #fff;
+	
+}
+
+.btn--blue {
+    background-color: #08cfff;
+	color: #fff;
+	
+}
+
+.btn--white {
+	background-color: #fff;
+	color: #000;
+	
+}
+
+.btn {
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 1.5rem 4rem;
+	border-radius: 10rem;
+	border: none;
+	font-size: 1.6rem;
+	display: inline-block;
+	transition: all .2s;
+}
+
+
+.btn:hover {
+	cursor: pointer;
+	background-color: #08c;
+}
+
+/*
+=============================
+ comments form
+=============================
+*/
+
+.comment__form,
+.comment {
+    padding: 6rem; }
+    
+    @media only screen and (max-width: 75em) {
+      .comment__form{
+        width: 65%; } }
+        
+    @media only screen and (max-width: 56.25em) {
+      .comment__form
+       {
+        width: 100%; } }
+        
+
+ /*
+=============================
+ comments form elements
+=============================
+*/
+.form__group:not(:last-child){
+	margin-bottom: 2rem;
+} 
+
+.form__input {
+	font-size: 1.5rem;
+	font-family: inherit;
+	color: inherit;
+	padding: 1.5rem 2rem;
+	border-radius: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	border: .1rem solid #333;
+	outline: none;
+	display: inline-block;
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
+
+@media only screen and (max-width: 56.25em) {
+    .form__input {
+      width: 100%; 
+     } 
+  }
+
+  .form__input:focus{
+    border-bottom: 3px solid #ff7730;
+}
+
+.form__input::-webkit-input-placeholder,
+.form__textarea::-webkit-input-placeholder {
+    color: #999;
+}
+
+.form__textarea {
+    font-size: 1.5rem;
+    font-family: inherit;
+    padding: 1.5rem 1rem;
+    color: inherit;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: .1rem solid #333;
+	outline: none;
+    display: inline-block;
+}
+
+@media only screen and (max-width: 56.25em) {
+    .form__textarea {
+      width: 100%; 
+     } 
+  }
+
+/* Table styles */
+
+
+.comment__table {
+    border-collapse: collapse;
+    font-size: 1.6rem;
+    /* max-width: 53.7rem;*/
+     /* max-width: inherit; */
+     width: 75rem;
+     padding: 6rem;
+   
+}
+
+@media only screen and (max-width: 56.25em) {
+    .comment__table {
+      width: 100%; 
+     } 
+  }
+  
+  
+.comment__table th, 
+.comment__table td {
+    border: .1rem solid #e1edff;
+    padding: .7rem 1.7rem;
+}
+
+
+/* Table Header */
+.comment__table thead th {
+    /* background-color: #508abb; */
+    background-color: #08cfff;
+    color: #FFFFFF;
+    border-color: #6ea1cc !important;
+    text-transform: uppercase;
+}
+
+
+
+.comment__table tbody tr:nth-child(odd) td {
+    background-color: #f4fbff;
+}
+.comment__table tbody tr:hover td {
+    background-color: #ffffa2;
+    border-color: #ffff0f;
+}
+
